@@ -1,0 +1,10 @@
+<form ng-controller="FindRecepieCtrl" ng-submit="submit()">{% csrf_token %}
+    <div class="form-group">
+        <input class="form-control" type="text" name="query" ng-model="query">
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary">Search</button>
+    </div>
+
+</form>

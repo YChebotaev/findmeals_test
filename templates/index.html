@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        {% include 'forms/find_recepie.html' %}
+    </div>
+    <div class="container">
+        <div ng-repeat="recepie in recepies">
+            <div class="r-search-result">
+                <p ng-bind="recepie.displayName" class="r-search-result-title h4"></p>
+                <div class="r-search-result-content">
+                    <span ng-repeat="ingredient in recepie.ingredients">
+                        <span ng-bind="ingredient.displayName"></span><span ng-if="!$last">,</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
