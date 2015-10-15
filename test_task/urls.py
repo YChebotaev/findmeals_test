@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 
-from recepies.views import IndexView, find_recepie
+from recepies.views import IndexView, find_recepie, ingredients_autocomplete
 
 urlpatterns = [
     url(r'^find_recepie$', find_recepie),
+    url(r'^ingredients_autocomplete$', ingredients_autocomplete),
     url(r'^$', IndexView.as_view()),
 ]

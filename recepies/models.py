@@ -29,7 +29,7 @@ class Ingredient(Base):
     recepies = relationship(
         'Recepie',
         secondary = ingredient_variation,
-        secondaryjoin = sqlalchemy.and_(id == ingredient_variation.c.ingredient_id, recepie_ingredients.c.variation_id == ingredient_variation.c.id)
+        secondaryjoin = sqlalchemy.and_(id == ingredient_variation.c.ingredient_id, recepie_ingredients.c.variation_id == ingredient_variation.c.id, sqlalchemy.text('recepie.id = recepie_ingredients.recepie_id'))
     )
 
     def toJSON(self):

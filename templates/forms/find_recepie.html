@@ -3,6 +3,14 @@
         <input class="form-control" type="text" name="query" ng-model="query">
     </div>
 
+    <tags-input ng-model="ingredientsInclude" add-from-autocomplete-only="true" replace-spaces-with-dashes="false">
+        <auto-complete source="ingredientsAutocomplete($query)"></auto-complete>
+    </tags-input>
+
+    <tags-input ng-model="ingredientsExclude" add-from-autocomplete-only="true">
+        <auto-complete source="ingredientsAutocomplete($query)"></auto-complete>
+    </tags-input>
+
     <div class="form-group">
         <button class="btn btn-primary">Search</button>
     </div>
